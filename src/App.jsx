@@ -166,7 +166,7 @@ useEffect(() => {
 // Delete
 async function deleteUser(id) {
   try {
-    let { data } = await axios.delete($ `{api}/${id}`)
+    let { data } = await axios.delete( `${api}/${id}`)
     get()
   } catch (error) {
     console.log(error);
@@ -176,7 +176,7 @@ async function deleteUser(id) {
 // Edit 
 async function editUser(id, user) {
   try {
-    let { data } = await axios.put($`{api}/${id}`, user);
+    let { data } = await axios.put(`${api}/${id}`, user);
     get()
   } catch (error) {
     console.log(error);
@@ -808,7 +808,7 @@ async function addUser(user) {
                     </StyledTableCell>
                     <StyledTableCell
                       align="right"
-                      sx={{ textAlign: "center", color: "red" }}
+                      sx={{ textAlign: "center", color: "blue" }}
                     >
                       {e.name}
                     </StyledTableCell>
@@ -820,13 +820,13 @@ async function addUser(user) {
                     </StyledTableCell>
                     <StyledTableCell
                       align="right"
-                      sx={{ textAlign: "center", color: "white" }}
+                      sx={{ textAlign: "center", color: "red" }}
                     >
                       {e.number}
                     </StyledTableCell>
                     <StyledTableCell
                       align="right"
-                      sx={{ textAlign: "center", color: "white" }}
+                      sx={{ textAlign: "center", color: "red" }}
                     >
                       <Box className="flex justify-center items-center gap-[20px]">
                         <button
