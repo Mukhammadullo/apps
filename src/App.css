@@ -1,0 +1,22 @@
+.section1Right{
+    background-image: url('src/assets/Rectangle 1701.png');
+    background-repeat: no-repeat;
+  }
+  .section3Right{
+    background-image: url('src/assets/Rectangle 1772.svg');
+background-repeat: no-repeat;
+background-size: cover;
+}
+.card1{
+    background-image: url('src/assets/Rectangle 1691.svg');
+background-repeat: no-repeat;
+
+}
+.card2{
+    background-image: url('src/assets/Rectangle 1692 (1).svg');
+background-repeat: no-repeat;
+}
+.card3{
+    background-image: url('src/assets/Rectangle 1693.svg');
+background-repeat: no-repeat;
+}
