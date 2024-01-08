@@ -554,7 +554,7 @@ async function addUser(user) {
 
 
 {/* section7 */}
-<section>
+<section className='md:block mob:hidden'>
   {/* title */}
  <div className='flex justify-center'>
   <p className='font-bold text-[50px]'>Реализованные проекты</p>
