@@ -640,7 +640,7 @@ function App() {
 </div>
 
 {/* right */}
-<div className='bg-[#FFFFFF] p-[4%]  rounded-2xl'>
+<div className='bg-[#FFFFFF] p-[4%] mt-[2%]  rounded-2xl'>
 <p className='md:text-[40px] font-bold text-center'>Оставить заявку</p>
 
 <div>
@@ -660,7 +660,7 @@ function App() {
     <div className='bg-[#FBFBFD] '>
       <img src="src/assets/plus-circle.svg" alt="" />
     </div>
-<p>Прикрепить файл</p>
+<p  >Прикрепить файл</p>
 </div>
 <Button variant="contained" color="primary" sx={{width:"180px" , height:"50px", borderRadius:"25px"}}>Отправить</Button>
 </div>
