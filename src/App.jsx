@@ -9,7 +9,6 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 // siwper
-import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -19,8 +18,6 @@ import 'swiper/css/navigation';
 import './styles.css';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
-// MUI textfield
-import TextField from '@mui/material/TextField';
 
 
 
@@ -29,14 +26,14 @@ import TextField from '@mui/material/TextField';
 import { useEffect } from 'react';
 
 // mui
-import Button from '@mui/material/Button';
+
 import MenuIcon from '@mui/icons-material/Menu';
 // import TextField from '@mui/material/TextField';
 
 // swiper
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 
 // Import Swiper styles
 import 'swiper/css';
@@ -46,7 +43,6 @@ import 'swiper/css/navigation';
 import './styles.css';
 
 // import required modules
-import { Pagination, Navigation } from 'swiper/modules';
 
 //modal
 import { Box, TextField } from '@mui/material';
