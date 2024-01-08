@@ -19,17 +19,184 @@ import 'swiper/css/navigation';
 import './styles.css';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
-
-
-
 // MUI textfield
 import TextField from '@mui/material/TextField';
+
+
+
+// TODOLIST____________________________________________
+// todo
+import { useEffect } from 'react';
+
+// mui
+import Button from '@mui/material/Button';
+import MenuIcon from '@mui/icons-material/Menu';
+// import TextField from '@mui/material/TextField';
+
+// swiper
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import './styles.css';
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
+
+//modal
+import { Box, TextField } from '@mui/material';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
+// table
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+
+import FileBase64 from 'react-file-base64';
+import axios from 'axios';
+
+//Table style
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
+
+
+
+
 
 
 
 
 function App() {
   
+
+// TODOLIST FUNctional
+// functional
+const api = "http://localhost:3000/data"
+
+const [base64F, setBase64F] = useState(null)
+const [base64F1, setBase64F1] = useState(null)
+
+const handleImg = (file) => {
+  setBase64F(file.base64)
+}
+
+const handleImg1 = (file) => {
+  setBase64F1(file.base64)
+}
+
+//modal 
+const [open, setOpen] = useState(false);
+
+const handleClickOpen = () => {
+  setOpen(true);
+};
+
+const handleClose = () => {
+  setOpen(false);
+};
+
+//modal  add
+const [openAdd, setOpenAdd] = useState(false);
+
+const handleClickOpenAdd = () => {
+  setOpenAdd(true);
+};
+
+const handleCloseAdd = () => {
+  setOpenAdd(false);
+};
+
+
+const [todo, setTodo] = useState([])
+const [addName, setAddName] = useState("")
+const [addCity, setAddCity] = useState("")
+const [addNumber, setAddNumber] = useState("")
+
+const [editName, setEditName] = useState("")
+const [editCity, setEditCity] = useState("")
+const [editNumber, setEditNumber] = useState("")
+const [idx, setIdx] = useState(null)
+
+
+// function get
+async function get() {
+  try {
+    let { data } = await axios.get(api)
+    setTodo(data)
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+useEffect(() => {
+  get()
+}, [])
+
+
+// Delete
+async function deleteUser(id) {
+  try {
+    let { data } = await axios.delete($ `{api}/${id}`)
+    get()
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// Edit 
+async function editUser(id, user) {
+  try {
+    let { data } = await axios.put($`{api}/${id}`, user);
+    get()
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// Add user
+async function addUser(user) {
+  try {
+    let { data } = await axios.post(api, user)
+    get()
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+
+
+
   // swiper
   const [swiperRef, setSwiperRef] = useState(null);
   let appendNumber = 4;
@@ -590,6 +757,102 @@ function App() {
 
 
 
+{/* TABle TODOLIST */}
+{/* todo */}
+<TableContainer
+            sx={{
+              width: "95%",
+              margin: "0 auto",
+              paddingBottom: "50px",
+              paddingTop: "10px",
+            }}
+          >
+            <button
+              className="bg-[hsl(186,43%,23%)] py-[5px] px-[15px] rounded-[5px] text-white mb-[20px]"
+              onClick={() => {
+                handleClickOpenAdd();
+              }}
+            >
+              New +
+            </button>
+            <Table sx={{ minWidth: 400 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell align="right" sx={{ textAlign: "start" }}>
+                    Img
+                  </StyledTableCell>
+                  <StyledTableCell align="right" sx={{ textAlign: "center" }}>
+                    Name
+                  </StyledTableCell>
+                  <StyledTableCell align="right" sx={{ textAlign: "center" }}>
+                    City
+                  </StyledTableCell>
+                  <StyledTableCell align="right" sx={{ textAlign: "center" }}>
+                    Phone
+                  </StyledTableCell>
+                  <StyledTableCell align="right" sx={{ textAlign: "center" }}>
+                    Action
+                  </StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {todo.map((e) => (
+                  <StyledTableRow>
+                    <StyledTableCell align="right" sx={{ textAlign: "center" }}>
+                      {<img src={e.file} className="h-[100px] w-[100px]" />}
+                    </StyledTableCell>
+                    <StyledTableCell
+                      align="right"
+                      sx={{ textAlign: "center", color: "red" }}
+                    >
+                      {e.name}
+                    </StyledTableCell>
+                    <StyledTableCell
+                      align="right"
+                      sx={{ textAlign: "center", color: "red" }}
+                    >
+                      {e.city}
+                    </StyledTableCell>
+                    <StyledTableCell
+                      align="right"
+                      sx={{ textAlign: "center", color: "white" }}
+                    >
+                      {e.number}
+                    </StyledTableCell>
+                    <StyledTableCell
+                      align="right"
+                      sx={{ textAlign: "center", color: "white" }}
+                    >
+                      <Box className="flex justify-center items-center gap-[20px]">
+                        <button
+                          className="bg-[#27a640] px-[25px] text-[white] p-[8px] rounded-[10px]"
+                          onClick={() => deleteUser(e.id)}
+                        >
+                          Delete
+                        </button>
+                        <button
+                          className="bg-[#5c3289] px-[20px] text-[white] p-[8px] rounded-[10px]"
+                          onClick={() => {
+                            handleClickOpen();
+                            setIdx(e.id);
+                            setEditName(e.name);
+                            setBase64F(e.file);
+                            setEditCity(e.city);
+                            // file: base64F
+                            setEditNumber(e.number);
+                          }}
+                        >
+                          Edit
+                        </button>
+                      </Box>
+                    </StyledTableCell>
+                  </StyledTableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+
 
 {/* footer */}
 <footer className='p-[5%]'>
@@ -672,6 +935,111 @@ function App() {
   </div>
 </footer>
 
+
+{/* MODALEDIT________________________________ */}
+{/* Edit*/}
+<React.Fragment>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">{"Edit User"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText
+              sx={{ display: "flex", flexDirection: "column", gap: "30px" }}
+              id="alert-dialog-description"
+            >
+              <TextField
+                value={editName}
+                onChange={(e) => setEditName(e.target.value)}
+              ></TextField>
+              <TextField
+                value={editNumber}
+                onChange={(e) => setEditNumber(e.target.value)}
+              ></TextField>
+              <TextField
+                value={editCity}
+                onChange={(e) => setEditCity(e.target.value)}
+              ></TextField>
+              <FileBase64 multiple={false} onDone={handleImg} />
+              <img src={base64F} className="rounded-[50%] w-[10%]" />
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Concel</Button>
+            <Button
+              onClick={() => {
+                let obj = {
+                  name: editName,
+                  number: editNumber,
+                  city: editCity,
+                  file: base64F,
+                };
+                console.log(editNumber);
+                editUser(idx, obj);
+                handleClose();
+              }}
+            >
+              Save
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </React.Fragment>
+
+      {/* modal add */}
+      <React.Fragment>
+        <Dialog
+          open={openAdd}
+          onClose={handleCloseAdd}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">{"Add User"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText
+              sx={{ display: "flex", flexDirection: "column", gap: "30px" }}
+              id="alert-dialog-description"
+            >
+              <TextField
+                value={addName}
+                onChange={(e) => setAddName(e.target.value)}
+              ></TextField>
+              <TextField
+                value={addNumber}
+                onChange={(e) => setAddNumber(e.target.value)}
+              ></TextField>
+              <TextField
+                value={addCity}
+                onChange={(e) => setAddCity(e.target.value)}
+              ></TextField>
+              <FileBase64 multiple={false} onDone={handleImg1} />
+              <img src={base64F1} className="rounded-[50%] w-[20%]" />
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleCloseAdd}>Concel</Button>
+            <Button
+              onClick={() => {
+                let user = {
+                  name: addName,
+                  city: addCity,
+                  number: addNumber,
+                  file: base64F1,
+                };
+                setAddName("");
+                setAddCity("");
+                setAddNumber("");
+                addUser(user);
+                handleCloseAdd();
+              }}
+            >
+              Save
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </React.Fragment>
 
 
 </div>
