@@ -593,7 +593,7 @@ function App() {
 
 {/* footer */}
 <footer className='p-[5%]'>
-  <div className='bg-[#EAF0F6] rounded-2xl  flex justify-around p-[4%] shadow-lg'>
+  <div className='bg-[#EAF0F6] rounded-2xl  md:flex justify-around p-[4%] shadow-lg'>
  
  
     {/* left */}
@@ -640,24 +640,24 @@ function App() {
 </div>
 
 {/* right */}
-<div className='bg-[#FFFFFF] p-[2%] rounded-2xl'>
+<div className='bg-[#FFFFFF] p-[4%]  rounded-2xl'>
 <p className='md:text-[40px] font-bold text-center'>Оставить заявку</p>
 
 <div>
-  <div className='my-4'>
-<TextField id="standard-basic" label="Имя" variant="standard" sx={{width:"350px"}} />
+  <div className='my-4 '>
+<TextField id="standard-basic" label="Имя" variant="standard" sx={{width:"300px"}} />
 </div>
 <div  className='my-4'>
-<TextField id="standard-basic" label="Телефон или почта" variant="standard" sx={{width:"350px"}} />
+<TextField id="standard-basic" label="Телефон или почта" variant="standard" sx={{width:"300px"}} />
 </div>
 <div  className='my-4'>
-<TextField id="standard-basic" label="Комментарий" variant="standard"  sx={{width:"350px"}} />
+<TextField id="standard-basic" label="Комментарий" variant="standard"  sx={{width:"300px"}} />
 </div>
 <div>
 
 <div className='flex justify-around items-center font-medium'>
-  <div>
-    <div>
+  <div className='flex items-center'>
+    <div className='bg-[#FBFBFD] '>
       <img src="src/assets/plus-circle.svg" alt="" />
     </div>
 <p>Прикрепить файл</p>
