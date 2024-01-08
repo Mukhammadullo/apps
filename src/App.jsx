@@ -344,9 +344,9 @@ async function addUser(user) {
 
 
 {/* section3 */}
-<section className='md:flex m-[4%] bg-[#E9EEF3]  shadow-xl '>
+<section className='md:flex m-[4%]  dark:bg-[#11172b]   bg-[#E9EEF3]  shadow-xl '>
   {/* left */}
-  <div className='bg-[#E9EEF3]  md:w-[50%] p-[2%]'>
+  <div className='bg-[#E9EEF3]  dark:bg-[#11172b] md:w-[50%] p-[2%]'>
 {/* top */}
 <div className='flex'>
   <h1 className='text-[50px] font-bold'>
@@ -359,7 +359,7 @@ async function addUser(user) {
 
 
 <div className='md:flex justify-evenly items-center md:w-[90%] md:h-[80px]  m-[4%] rounded-xl bg-[#6293e847]'>
-  <div className='md:w-[32%] font-bold flex items-center justify-evenly shadow-xl h-[70px] rounded-[26px] bg-[white]'><h1>1. Техническое задание</h1></div>
+  <div className='md:w-[32%] font-bold flex items-center justify-evenly shadow-xl h-[70px] rounded-[26px] bg-[white] dark:text-[black]'><h1>1. Техническое задание</h1></div>
   <div className='md:w-[32%] font-bold flex items-center justify-evenly h-[70px] rounded-[26px]'><h1>2. Анализ <br /> моделей ИИ </h1></div>
   <div className='md:w-[32%] font-bold flex items-center justify-evenly h-[70px] rounded-[26px]'><h1>3. Архитектура системы с ИИ</h1></div>
 </div>
@@ -454,7 +454,7 @@ async function addUser(user) {
 
 
 {/* section5 */}
-<section className='md:flex justify-between shadow-xl items-center mt-[8%] bg-[#D2F4E4] m-[4%]'>
+<section className='md:flex justify-between shadow-xl items-center mt-[8%]  dark:bg-[#11172b] bg-[#D2F4E4] m-[4%]'>
   {/* left */}
   <div className='md:w-[40%]  p-[2%] '>
     <div className='flex md:text-[50px] mob:text-[30px] font-bold'>
@@ -519,10 +519,10 @@ async function addUser(user) {
   <div className='p-[2%]'>
     <p className='flex md:text-[50px] mob:text-[30px] font-bold'>Разработка ИИ</p>
     <p className='font-bold mb-[2%]'>Выбор платформы, создание и обучение модели</p>
-  <p className='font-medium text-[#151516]'>ИИ эффективно применяется в узких областях. Если простыми словами и по аналогии строения дерева, ИИ подразделяется на следующие базовые разделы (ствол): </p>
-  <p className='font-medium text-[#151516] mb-[3%]'>- Зрение / Данные / Звук / Речь</p>
-  <p className='font-medium text-[#151516]'>Каждый из этих разделов (ствол) имеет множество разных типов (веток), т.е. в какой именно узкой области необходимо будет работать. И каждый такой тип (ветки) имеет свои функциональные возможности (листья), т.е. что именно необходимо будет делать. </p>
-  <p className='font-medium text-[#151516] mb-[3%]'>Исходя из задачи и ожидаемого результата индивидуально подбираются технологии реализации и проектируется архитектура (строение дерева), после чего, создаются модели машинного обучения и обучаются до необходимого состояния.</p>  
+  <p className='font-medium dark:text-[white]  text-[#151516]'>ИИ эффективно применяется в узких областях. Если простыми словами и по аналогии строения дерева, ИИ подразделяется на следующие базовые разделы (ствол): </p>
+  <p className='font-medium dark:text-[white]  text-[#151516] mb-[3%]'>- Зрение / Данные / Звук / Речь</p>
+  <p className='font-medium dark:text-[white]  text-[#151516]'>Каждый из этих разделов (ствол) имеет множество разных типов (веток), т.е. в какой именно узкой области необходимо будет работать. И каждый такой тип (ветки) имеет свои функциональные возможности (листья), т.е. что именно необходимо будет делать. </p>
+  <p className='font-medium   dark:text-[white] text-[#151516] mb-[3%]'>Исходя из задачи и ожидаемого результата индивидуально подбираются технологии реализации и проектируется архитектура (строение дерева), после чего, создаются модели машинного обучения и обучаются до необходимого состояния.</p>  
   <p>Реализовывали проекты в разделах компьютерного зрения и данных</p>
   <div className='border-y-2 border-black flex justify-between p-[2%]'>
     <p className='font-bold'>Технологии, с которыми работаем</p>
@@ -577,7 +577,7 @@ async function addUser(user) {
         className="mySwiper"
       
       >
-        <SwiperSlide className='bg-[#F5EEEE]'>
+        <SwiperSlide className='bg-[#F5EEEE] dark:bg-[#11172b]'>
           <div>
           <p>Маркетплейс</p>
           <p className='font-bold text-[20px]'>Eat Repeat</p>
@@ -587,7 +587,7 @@ async function addUser(user) {
           <img className='mr-[-14%]' src="src/assets/Eat repeat 2.svg" alt="" />
         </SwiperSlide>
 
-        <SwiperSlide className='bg-[#BFDFE6]'>
+        <SwiperSlide className='bg-[#BFDFE6] dark:bg-[#11172b]'>
         <div>
           <p>Маркетплейс</p>
           <p className='font-bold text-[20px]'>Eat Repeat</p>
@@ -861,7 +861,7 @@ async function addUser(user) {
 
 {/* footer */}
 <footer className='p-[5%]'>
-  <div className='bg-[#EAF0F6] rounded-2xl  md:flex justify-around p-[4%] shadow-lg'>
+  <div className='bg-[#EAF0F6] dark:bg-[#11172b] rounded-2xl  md:flex justify-around p-[4%] shadow-lg'>
  
  
     {/* left */}
@@ -908,7 +908,7 @@ async function addUser(user) {
 </div>
 
 {/* right */}
-<div className='bg-[#FFFFFF] p-[4%] mt-[2%]  rounded-2xl'>
+<div className='bg-[#FFFFFF] dark:bg-[#11172b] p-[4%] mt-[2%]  rounded-2xl'>
 <p className='md:text-[40px] font-bold text-center'>Оставить заявку</p>
 
 <div>
