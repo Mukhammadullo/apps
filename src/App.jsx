@@ -8,6 +8,10 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleRight';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
+// Dark
+import Switcher from './components/Switcher'
+
+
 // siwper
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -239,6 +243,7 @@ async function addUser(user) {
 <Button variant="contained" color="primary" sx={{width:"180px" , height:"50px", borderRadius:"25px"}}>Заказать</Button>
 <div className='mob:inline-flex md:hidden flex justify-center items-center rounded-full bg-[#5252c443] w-[50px] h-[50px]'>
   <MenuOpenIcon></MenuOpenIcon>
+  
   </div>
 </div>
 
@@ -251,6 +256,9 @@ async function addUser(user) {
   <p className='font-bold'>О студии</p>
   <p className='font-bold'>Контакты</p>
   <ArrowCircleRightIcon sx={{fontSize:"40px"}}></ArrowCircleRightIcon>
+  {/* dark */}
+  <Switcher />
+  
 </div>
 </header>
 
