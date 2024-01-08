@@ -230,7 +230,7 @@ async function addUser(user) {
   
   return (
     // main
-<div>
+<div className='dark:bg-[#11172b] dark:text-[white]'>
  
 <header className='flex justify-between items-center  '>
 
@@ -306,7 +306,8 @@ async function addUser(user) {
     <h2 className='text-[#9A52FD] text-[20px] font-bold'>Под ключ</h2>
     <p className='font-bold'>С нуля, под ключ, для <br /> бизнеса или стартапа</p>
   </div>
-  <div className='card2 md:p-[2%] mob:p-[10%]   '>
+
+  <div className='card2 md:p-[2%] mob:p-[10%] '>
     <h2 className='text-[#9A52FD] text-[20px] font-bold'>ML сервисы </h2>
     <p className='font-bold'>Создадим свой ML движок <br /> либо соберем из готовых <br /> библиотек или SaaS решений</p>
   </div>
@@ -343,9 +344,9 @@ async function addUser(user) {
 
 
 {/* section3 */}
-<section className='md:flex m-[4%] '>
+<section className='md:flex m-[4%] bg-[#E9EEF3]  shadow-xl '>
   {/* left */}
-  <div className='bg-[#E9EEF3]  md:w-[50%] p-[2%] '>
+  <div className='bg-[#E9EEF3]  md:w-[50%] p-[2%]'>
 {/* top */}
 <div className='flex'>
   <h1 className='text-[50px] font-bold'>
@@ -357,10 +358,10 @@ async function addUser(user) {
 <h1 className='font-bold text-[30px]'>3 последовательных этапа работ</h1>
 
 
-<div className='flex justify-evenly items-center w-[90%] h-[80px]  m-[4%] rounded-xl bg-[#6293e847]'>
-  <div className='w-[32%] font-bold flex items-center justify-evenly shadow-xl h-[70px] rounded-[26px] bg-[white]'><h1>1. Техническое задание</h1></div>
-  <div className='w-[32%] font-bold flex items-center justify-evenly h-[70px] rounded-[26px]'><h1>2. Анализ <br /> моделей ИИ </h1></div>
-  <div className='w-[32%] font-bold flex items-center justify-evenly h-[70px] rounded-[26px]'><h1>3. Архитектура системы с ИИ</h1></div>
+<div className='md:flex justify-evenly items-center md:w-[90%] md:h-[80px]  m-[4%] rounded-xl bg-[#6293e847]'>
+  <div className='md:w-[32%] font-bold flex items-center justify-evenly shadow-xl h-[70px] rounded-[26px] bg-[white]'><h1>1. Техническое задание</h1></div>
+  <div className='md:w-[32%] font-bold flex items-center justify-evenly h-[70px] rounded-[26px]'><h1>2. Анализ <br /> моделей ИИ </h1></div>
+  <div className='md:w-[32%] font-bold flex items-center justify-evenly h-[70px] rounded-[26px]'><h1>3. Архитектура системы с ИИ</h1></div>
 </div>
 
 <div className='m-[2%]'>
@@ -378,7 +379,7 @@ async function addUser(user) {
   </div>
 </div>
 
-<p className='w-[70%] m-[2%]'>В ТЗ описывается: «что нужно достичь с помощью ИИ и дополнительных компонентов системы, а также, откуда будут браться входные данные, куда они будут попадать дальше (промежуточная обработка) и в каком виде и где должен будет выводиться итоговый результат системы (куда потом интегрироваться)».</p>
+<p className='md:w-[70%] m-[2%]'>В ТЗ описывается: «что нужно достичь с помощью ИИ и дополнительных компонентов системы, а также, откуда будут браться входные данные, куда они будут попадать дальше (промежуточная обработка) и в каком виде и где должен будет выводиться итоговый результат системы (куда потом интегрироваться)».</p>
 
 <div className='flex m-[2%]'>
   <p className='font-bold' >от</p>
@@ -453,9 +454,9 @@ async function addUser(user) {
 
 
 {/* section5 */}
-<section className='md:flex justify-around items-center mt-[8%]'>
+<section className='md:flex justify-between shadow-xl items-center mt-[8%] bg-[#D2F4E4] m-[4%]'>
   {/* left */}
-  <div className='md:w-[40%] bg-[#D2F4E4] p-[2%] '>
+  <div className='md:w-[40%]  p-[2%] '>
     <div className='flex md:text-[50px] mob:text-[30px] font-bold'>
       <p>Система с ИИ</p>
       <img src="src/assets/image 1761.svg" alt="" />
@@ -523,9 +524,9 @@ async function addUser(user) {
   <p className='font-medium text-[#151516]'>Каждый из этих разделов (ствол) имеет множество разных типов (веток), т.е. в какой именно узкой области необходимо будет работать. И каждый такой тип (ветки) имеет свои функциональные возможности (листья), т.е. что именно необходимо будет делать. </p>
   <p className='font-medium text-[#151516] mb-[3%]'>Исходя из задачи и ожидаемого результата индивидуально подбираются технологии реализации и проектируется архитектура (строение дерева), после чего, создаются модели машинного обучения и обучаются до необходимого состояния.</p>  
   <p>Реализовывали проекты в разделах компьютерного зрения и данных</p>
-  <div>
-    <p>Технологии, с которыми работаем</p>
-    <div>+</div>
+  <div className='border-y-2 border-black flex justify-between p-[2%]'>
+    <p className='font-bold'>Технологии, с которыми работаем</p>
+    <div className='font-bold text-[20px]'>+</div>
   </div>
 
   </div>
